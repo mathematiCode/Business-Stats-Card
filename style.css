@@ -7,12 +7,13 @@
 
     color: var(--text);
     font-size: 16px;
+    font-family: "Inter", sans serif;
 }
+
 
 body {
     background: var(--background);
     height: 100vh;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,6 +27,7 @@ h1 {
     margin-bottom: 10px;
     color: white;
     text-align: center;
+    font-family: "Lexend-Deca", sans-serif;
 }
 
 p {
@@ -40,55 +42,58 @@ p {
 .attribution a { color: hsl(228, 90%, 80%); }
 
 
-
-#purple-image {
-    width: 100%;
-    height:30%;
-    overflow: hidden;
-    position: absolute;
-    top: 0px;
-}
-
 #info {
-    position: absolute;
     background-color: var(--primary);
-    z-index: 2;
+    position: absolute;
+    z-index: 3;
     height: 70%;
     margin-top: 15px;
     bottom: 0px;
     display: flex;
-    padding: 20px;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     overflow: auto;
 }
 
-
-#overlay {
-    background-color: hsla(277, 64%, 40%,60%);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    z-index: 1;
+#info > * {
+    padding-left: 20px;
+    padding-right: 20px;
 }
+
 img {
     width: 100%;
+    height: auto;
     position: absolute;
-    top: 0;
+    z-index: 1;
+    top: 0px;
+}
+
+#purple-image {
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    top: 0px;
+}
+#overlay {
+    width: 100%;
+    background-color: hsla(277, 80%, 40%, 60%);
+    height: 100%;
+    position: absolute;
+    z-index: 2;
 }
 
 #card {
     width: 82%;
     height: 90%;
-    border-radius: 5%;
+    z-index: -1;
+    border-radius: 1%;
     background-color: var(--primary);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    position: absolute;
+    position: relative;
     margin: auto;
     overflow: hidden;
 }
@@ -116,20 +121,41 @@ img {
     color: white;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 660px) {
     #card {
         flex-direction: row-reverse;
-        height: 60%;
+        height: 70%;
     }
-
     #purple-image {
-        position: initial;
+        width: 50%;
+        right: 0px;
         height: 100%;
-        width: 45%;
-    }
-    #info {
-        position: initial;
-        width: 45%;
     }
 
+    #info {
+        width: 50%;
+        height: 100%;
+        left: 0px;
+    }
+    img {
+        width: auto;
+        height: 100%;
+    }
+#metrics {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    width: 90%;
+}
+
+p, h1 {
+    text-align: left;
+}
+h1 {
+ font-size: 2rem;
+}
+p {
+    font-size: 1rem;
+
+}
 }
